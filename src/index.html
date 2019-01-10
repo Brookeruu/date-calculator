@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Date Checker</title>
-  </head>
-  <body>
-    <div class="container">
+<head>
+  <title>Date Checker</title>
+</head>
+<body>
+  <div class="container">
     <h2>Date Checker</h2>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+
+
+          <h2 class="card-title"></h2>
+          <div class="form-group">
+            <form id="dateInput">
+              <div class="form-group">
+                <label for="month">Enter a month (MM)</label>
+                <input type="number" class="form-control"  id="inputMonth" required>
+              </div>
+              <div class="form-group">
+                <label for="month">Enter a day (D)</label>
+                <input type="number" class="form-control"  id="inputDay" required>
+              </div>
+              <div class="form-group">
+                <label for="month">Enter a year (YYYY)</label>
+                <input type="number" class="form-control"  id="inputYear" required>
+              </div>
+              <button type="submit" name="button" class="btn btn-warning">Get Day of Week!</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Results</h2>
+          <h3><span id="inputDate"></span></h3>
+          <h2><span id="outputDay"></span></h2>
+
+        </div>
+
+      </div>
+
     </div>
-  </body>
+  </div>
+</body>
 </html>
