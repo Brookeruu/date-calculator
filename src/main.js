@@ -1,4 +1,4 @@
-import { SudokuChecker } from './sudoku-checker.js';
+import { DateChecker } from './date-checker.js';
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
