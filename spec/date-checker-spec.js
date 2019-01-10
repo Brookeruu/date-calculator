@@ -4,6 +4,7 @@ describe ('DateChecker', function() {
 
   let goodDate;
   let badDate;
+  let leapYearDate;
 
   beforeEach(function() {
     goodDate = new DateChecker(
@@ -18,6 +19,12 @@ describe ('DateChecker', function() {
                       32
     );
 
+    leapYearDate = new DateChecker(
+                      2020,
+                      7,
+                      31
+    );
+
   })
 
   it('should check if dates are valid', function (){
@@ -25,5 +32,11 @@ describe ('DateChecker', function() {
     expect(badDate.isInputValid()).toEqual(false);
   });
 
+  it('should check if a DateChecker object\'s year is a leap year', function (){
+    expect(goodDate.isLeapYear()).toEqual(false);
+    expect(leapYearDate.isLeapYear()).toEqual(true);
+  });
+
+  
 
 })
