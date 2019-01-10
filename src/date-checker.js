@@ -89,8 +89,12 @@ export class DateChecker {
     return (this.yearsDifference() * 365) + (daysContributedByMonths) + this.day + numberLeapDays
   }
 
-  // getWeekday() {
-  //
-  // }
+  getWeekday(){
+    let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let dayIndex = this.daysDifference() % 7;
+    return daysOfWeek[dayIndex];
+
+  }
 
 }

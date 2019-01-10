@@ -78,8 +78,9 @@ describe ('DateChecker', function() {
     expect(ancientYearDate2.countLeapYears()).toEqual(77);
   });
 
-  // it('should return the day of the week based on its year/month/day properties', function (){
-  //   expect(leapYearDate2.getWeekday()).toEqual("Thursday");
-  // });
+  it('should return the day of the week based on its year/month/day properties', function (){
+    expect(leapYearDate2.getWeekday()).toEqual("Sunday");
+    expect(goodDate.getWeekday()).toEqual("Thursday");
+  });
 
 })
