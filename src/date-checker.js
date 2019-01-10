@@ -84,9 +84,13 @@ export class DateChecker {
     }
 
     // add function to calculate number of occured leap years
+    let numberLeapDays = this.countLeapYears();
 
-
-    return (this.yearsDifference() * 365) + (daysContributedByMonths) + this.day
+    return (this.yearsDifference() * 365) + (daysContributedByMonths) + this.day + numberLeapDays
   }
+
+  // getWeekday() {
+  //
+  // }
 
 }

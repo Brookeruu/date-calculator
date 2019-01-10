@@ -5,6 +5,7 @@ describe ('DateChecker', function() {
   let goodDate;
   let badDate;
   let leapYearDate;
+  let leapYearDate2;
   let ancientYearDate;
   let ancientYearDate2;
 
@@ -25,6 +26,12 @@ describe ('DateChecker', function() {
                       2020,
                       7,
                       31
+    );
+
+    leapYearDate2 = new DateChecker(
+                      2020,
+                      11,
+                      15
     );
 
     ancientYearDate = new DateChecker(
@@ -59,16 +66,20 @@ describe ('DateChecker', function() {
     expect(goodDate.monthsDifference()).toEqual(0);
   });
 
-  it('should determine the difference in days between input day and base day NOT including leap years', function (){
-    expect(leapYearDate.daysDifference()).toEqual(737147);
-    expect(goodDate.daysDifference()).toEqual(736580);
+  it('should determine the difference in days between input day and base day including leap years', function (){
+    expect(ancientYearDate.daysDifference()).toEqual(4337);
+    expect(goodDate.daysDifference()).toEqual(737069);
+    expect(leapYearDate2.daysDifference()).toEqual(737744);
 
   });
 
   it('should return the count of leap years between base-year through input', function (){
     expect(ancientYearDate.countLeapYears()).toEqual(3);
     expect(ancientYearDate2.countLeapYears()).toEqual(77);
-
   });
+
+  // it('should return the day of the week based on its year/month/day properties', function (){
+  //   expect(leapYearDate2.getWeekday()).toEqual("Thursday");
+  // });
 
 })
