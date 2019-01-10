@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(function() {
 
+  $("#result").hide();
+
   $("#dateInput").submit(function(event) {
     event.preventDefault();
 
@@ -17,11 +19,14 @@ $(document).ready(function() {
 
     if (datechecker.isInputValid()) {
       $("#outputDay").text(datechecker.getWeekday());
+      $("#inputDate").text((`${month}-${day}-${year}`));
+      $("#result").show();
 
     } else  {
-      $("#outputDay").text("Please enter a vaid date!");
+      $("#outputDay").text("Please enter a valid date!");
+      $("#inputDate").text((`${month}-${day}-${year}`));
+      $("#result").show();
     }
-
 
   });
 });

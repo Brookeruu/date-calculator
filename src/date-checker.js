@@ -6,7 +6,6 @@ export class DateChecker {
     this.baseYear = 1;
     this.baseMonth = 1;
     this.baseDay = 1;
-
   }
 
   isLeapYear() {
@@ -35,7 +34,6 @@ export class DateChecker {
 
   isInputValid(){
     const daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
-
 
     if (this.year > 0) {
       if (this.month >= 1 && this.month <= 12) {
@@ -71,7 +69,6 @@ export class DateChecker {
     return count;
   }
 
-
   monthsDifference(){
     return this.month - this.baseMonth;
   }
@@ -83,7 +80,6 @@ export class DateChecker {
       daysContributedByMonths += daysInMonth[i];
     }
 
-    // add function to calculate number of occured leap years
     let numberLeapDays = this.countLeapYears();
 
     return (this.yearsDifference() * 365) + (daysContributedByMonths) + this.day + numberLeapDays
@@ -94,7 +90,6 @@ export class DateChecker {
 
     let dayIndex = this.daysDifference() % 7;
     return daysOfWeek[dayIndex];
-
   }
 
 }

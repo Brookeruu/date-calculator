@@ -1,46 +1,45 @@
-## Planning
+  #### Date Checker App
 
-1. Configuration/dependencies
-  * Webpack, Karma, Jasmine, ESLint, Bootstrap, Popper (for bootstrap), jQuery, CSS-Loader, Uglify, Style-Loader
+  #### By Brooke Perry & Robert Bruce
 
+  ## This app allows a user to enter a date and returns which day of the week it falls on.
 
-2. Specs
-  * Get a date
-  * Establish base date (0) with month, day, year, day of week
-  * Apply rules for Gregorian Calendar
-    * Leap year
-      * Every 4th year
-      * If % 4 != 0, then not leap year
-      * Except 100s years % 400 !== 0
-      * Except 100's that % 400 == 0
-  * Date class
-    * new CustomDate()
-      * properties
-        * year
-        * month
-        * day
-        * originDate = 1-1-0
-      * methods
-        * constructor
-        * calculateDays between origin and given date
-          * daysInMonths = [31,28,31,30,31,30,31,31,30,31,30,31]
-          * use a leap year function to return the number of leap years between origin and given date
-          * add # of leap years to total number of days
+  ## Setup/Installation Requirements
 
+  * In the command line, clone this repository with
+  ```
+  $ git clone
+  ```
 
-3. Integration
-  * Initial routes or index pages with all dependencies in Controller/index.html head
-  * Template/html page for ...
-  * Template/html page for ...
-  * Template/html page for ... (one for each route/integrated user story)
-  * Display...
-  * Integrate feature that...
+  * Navigate into the directory and use command
+    ```
+    $ npm install
+    $ ./node_modules/.bin/jasmine init
+    $ karma init
+    ```
+  * To open the application in Chrome, use command
+  ```
+  $ npm run start
+  ```
+  * To run the test suite, use command
+  ```
+  $ npm test
+  ```
 
-4. UX/UI
-  * Include and modify bootstrap/materialize/Sass etc.
-  * Develop custom style
+  ## Known Bugs
 
-5. Polish
-  * Refactor minor portion of...
-  * Delete unused...
-  * Make README awesome
+  * There are no known bugs at this time.
+
+  ## Support and contact details
+
+  If you have any questions or issues, please contact perrysbrooke@gmail.com or e2robby@gmail.com. Or, feel free to contribute to the code.
+
+  ## Technologies Used
+
+  Javascript, Node, npm, Jasmine, Karma, HTML, CSS, Git, Bootstrap, jQuery, webpack, Popper, ESLint, Uglify, and Style-Loader.
+
+  ### License
+
+  This software is licensed under the MIT license.
+
+  Copyright (c) 2019 **Brooke Perry & Robert Bruce**
