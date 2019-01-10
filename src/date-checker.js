@@ -21,6 +21,18 @@ export class DateChecker {
     }
   }
 
+  identifyLeapYear(year) {
+    if (year % 4 === 0 && year % 100 !== 0) {
+      return true;
+    }
+    else if (year % 100 === 0 && year % 400 === 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   isInputValid(){
     const daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
 
@@ -46,6 +58,20 @@ export class DateChecker {
     return this.year - this.baseYear;
   }
 
+  countLeapYears(){
+    let count = 0;
+    for (let i = 1; i < this.year; i++){
+      this.identifyLeapYear(i) ? count++ : null;
+    }
+
+    if (this.isLeapYear() && (this.month > 2 || (this.month ==2 && this.day == 29))) {
+      count++;
+    }
+
+    return count;
+  }
+
+
   monthsDifference(){
     return this.month - this.baseMonth;
   }
@@ -56,6 +82,8 @@ export class DateChecker {
     for (let i = 0; i < this.monthsDifference(); i++) {
       daysContributedByMonths += daysInMonth[i];
     }
+
+    // add function to calculate number of occured leap years
 
 
     return (this.yearsDifference() * 365) + (daysContributedByMonths) + this.day

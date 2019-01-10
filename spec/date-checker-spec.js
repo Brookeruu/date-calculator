@@ -5,6 +5,8 @@ describe ('DateChecker', function() {
   let goodDate;
   let badDate;
   let leapYearDate;
+  let ancientYearDate;
+  let ancientYearDate2;
 
   beforeEach(function() {
     goodDate = new DateChecker(
@@ -23,6 +25,18 @@ describe ('DateChecker', function() {
                       2020,
                       7,
                       31
+    );
+
+    ancientYearDate = new DateChecker(
+                      12,
+                      11,
+                      15
+    );
+
+    ancientYearDate2 = new DateChecker(
+                      320,
+                      11,
+                      15
     );
 
   })
@@ -51,6 +65,10 @@ describe ('DateChecker', function() {
 
   });
 
+  it('should return the count of leap years between base-year through input', function (){
+    expect(ancientYearDate.countLeapYears()).toEqual(3);
+    expect(ancientYearDate2.countLeapYears()).toEqual(77);
 
+  });
 
 })
