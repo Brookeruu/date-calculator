@@ -37,6 +37,20 @@ describe ('DateChecker', function() {
     expect(leapYearDate.isLeapYear()).toEqual(true);
   });
 
-  
+  it('should determine the difference in years between input year and base year', function (){
+    expect(goodDate.yearsDifference()).toEqual(2018);
+  });
+
+  it('should determine the difference in months between input month and base month', function (){
+    expect(goodDate.monthsDifference()).toEqual(0);
+  });
+
+  it('should determine the difference in days between input day and base day NOT including leap years', function (){
+    expect(leapYearDate.daysDifference()).toEqual(737147);
+    expect(goodDate.daysDifference()).toEqual(736580);
+
+  });
+
+
 
 })

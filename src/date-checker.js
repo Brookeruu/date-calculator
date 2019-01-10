@@ -42,4 +42,23 @@ export class DateChecker {
     return false;
   }
 
+  yearsDifference(){
+    return this.year - this.baseYear;
+  }
+
+  monthsDifference(){
+    return this.month - this.baseMonth;
+  }
+
+  daysDifference(){
+    const daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+    let daysContributedByMonths = 0;
+    for (let i = 0; i < this.monthsDifference(); i++) {
+      daysContributedByMonths += daysInMonth[i];
+    }
+
+
+    return (this.yearsDifference() * 365) + (daysContributedByMonths) + this.day
+  }
+
 }
